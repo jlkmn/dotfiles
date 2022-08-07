@@ -60,7 +60,7 @@ cpu_temperature 0 {
 }
 
 memory {
-        format = "%used"
+        format = "🪐 MEM %available"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }

@@ -58,7 +58,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# change focus
+#1 change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -185,7 +185,7 @@ bar {
         status_command i3status
 }
 
-#exec --no-startup-id xrandr --output DVI-I-1-1 --auto --right-of HDMI-1
+#exec --no-startup-id xrandr --output DP-1 --auto --right-of HDMI-1
 exec --no-startup-id nitrogen --restore
 
 bindsym $mod+Shift+s   exec screengrab -r
@@ -199,4 +199,4 @@ default_floating_border pixel 1
 
 #assign [class="terminal"] $ws2
 assign [class="Todoist"] $ws4
-
+assign [class="Code"] $ws3
