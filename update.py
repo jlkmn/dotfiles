@@ -4,6 +4,7 @@ import shutil
 
 files = [
             ".config/Code/User/settings.json",
+            ".config/Code/User/keybindings.json",
             ".config/i3/config",
             ".config/i3status/config",
         ]
