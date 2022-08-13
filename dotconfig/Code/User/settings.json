@@ -1,7 +1,15 @@
 {
     "window.zoomLevel": 1,
     "editor.fontFamily": "'FiraCode Nerd Font Mono', 'monospace', monospace",
-    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-    "vscode-neovim.neovimInitVimPaths.linux": "$HOME/.config/nvim/init.vim",
-    "editor.minimap.enabled": false,
+    "vim.useCtrlKeys": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
 }
