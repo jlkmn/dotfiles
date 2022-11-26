@@ -49,6 +49,14 @@
     "when": "inQuickOpen"
   },
   {
+    "key": "shift+1",
+    "command": "git.stageAll"
+  },
+  {
+    "key": "shift+2",
+    "command": "git.unstageAll"
+  },
+  {
     "key": "cmd+1",
     "command": "workbench.action.openEditorAtIndex1"
   },
