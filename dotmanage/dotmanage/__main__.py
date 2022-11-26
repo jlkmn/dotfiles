@@ -1,14 +1,8 @@
 import logging
 import sys
+from dotmanage import commands
 from exitstatus import ExitStatus
 import fire
-
-class CmdHandler:
-    def __init__(self):
-        self.a = a
-        
-def a():
-    logging.info("HI")
 
 def configure_logging():
     log_format = "%(asctime)s [%(levelname)s] %(module)s.%(funcName)s(): %(message)s"
@@ -18,10 +12,7 @@ def main():
     configure_logging()
 
     try:
-        fire.Fire(CmdHandler)
+        fire.Fire(commands)
     except Exception as exception:
         logging.exception(exception)
         sys.exit(ExitStatus.failure)
-
-if __name__ == '__main__':
-    fire.Fire([a,b])
