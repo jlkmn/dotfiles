@@ -8,7 +8,7 @@
   {
     "key": "ctrl+e",
     "command": "workbench.action.toggleSidebarVisibility"
-  },
+  }kj,
   {
     "key": "ctrl+h",
     "command": "workbench.view.explorer"
@@ -47,14 +47,6 @@
     "key": "tab",
     "command": "workbench.action.quickOpenNavigateNext",
     "when": "inQuickOpen"
-  },
-  {
-    "key": "shift+1",
-    "command": "git.stageAll"
-  },
-  {
-    "key": "shift+2",
-    "command": "git.unstageAll"
   },
   {
     "key": "cmd+1",
