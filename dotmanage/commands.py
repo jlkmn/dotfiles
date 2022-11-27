@@ -8,8 +8,8 @@ from os import path
 from dotmanage.models.ConfigFile import ConfigFile
 
 config_files: List[ConfigFile] = [
-        ConfigFile("~/Library/Application Support/Code/User/settings.json", ""),
-        ConfigFile("~/Library/Application Support/Code/User/keybindings.json", ""),
+        ConfigFile("/Users/kul/Library/Application Support/Code/User/settings.json", ""),
+        ConfigFile("/Users/kul/Library/Application Support/Code/User/keybindings.json", ""),
     ]
 
 def get():
@@ -19,11 +19,12 @@ def get():
     if platform == "darwin":
         for config_file in config_files:
             logging.info("Getting %s", config_file.osx_path)
-            full_path = path.expanduser(config_file.osx_path)
+            full_path = config_file.osx_path
 
             if not path.exists(full_path):
                 logging.warning("File does not exist on system")
                 continue
+
             destination_path = f"./configfiles/{config_file.osx_path}"
             os.makedirs(os.path.dirname(destination_path), exist_ok=True)
             shutil.copy(full_path, destination_path)
@@ -44,10 +45,9 @@ def set():
             if not path.exists(source_path):
                 logging.warning("Does not exist in configfiles")
                 continue
-            destination_path = path.expanduser(config_file.osx_path)
-            os.makedirs(os.path.dirname(destination_path), exist_ok=True)
-            shutil.copy(source_path, destination_path)
 
+            os.makedirs(os.path.dirname(config_file.osx_path), exist_ok=True)
+            shutil.copy(source_path, config_file.osx_path)
     elif platform == "win32":
         # Handle windows
         pass
