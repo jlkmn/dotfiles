@@ -23,5 +23,6 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "audioCues.volume": 0
 }

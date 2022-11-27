@@ -11,13 +11,24 @@
   }kj,
   {
     "key": "ctrl+h",
-    "command": "workbench.view.explorer"
+    "when": "editorTextFocus",
+    "command": "workbench.files.action.focusFilesExplorer"
   },
   {
     "key": "ctrl+l",
     "when": "sideBarFocus",
     "command": "workbench.action.focusActiveEditorGroup"
   },
+  // {
+  //   "key": "ctrl+h",
+  //   "command": "workbench.scm.focus",
+  //   "when": "filesExplorerFocus"
+  // },
+  // {
+  //   "key": "ctrl+l",
+  //   "command": "workbench.files.action.focusFilesExplorer",
+  //   "when": "!filesExplorerFocus && !editorTextFocus"
+  // },
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
@@ -83,5 +94,15 @@
   {
     "key": "cmd+9",
     "command": "workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "alt+b",
+    "command": "gitlens.toggleFileBlame",
+    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+  },
+  {
+    "key": "alt+cmd+g b",
+    "command": "-gitlens.toggleFileBlame",
+    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
   }
 ]
