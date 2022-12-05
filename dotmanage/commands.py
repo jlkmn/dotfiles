@@ -5,14 +5,15 @@ import logging
 from sys import platform
 from os import path
 
-from dotmanage.models.ConfigFile import ConfigFile
+from dotmanage.models.ConfigFile import OS, ConfigFile
 
 config_files: List[ConfigFile] = [
-        ConfigFile("/Users/{user}/Library/Application Support/Code/User/settings.json", ""),
-        ConfigFile("/Users/{user}/Library/Application Support/Code/User/keybindings.json", ""),
-        ConfigFile("/Users/{user}/Library/Application Support/Code/User/keybindings.json", ""),
-        ConfigFile("/Users/{user}/.tmux.conf", ""),
-    ]
+        ConfigFile("/Users/{user}/Library/Application Support/Code/User/settings.json"),
+        ConfigFile("/Users/{user}/Library/Application Support/Code/User/keybindings.json"),
+        ConfigFile("/Users/{user}/Library/Application Support/Code/User/keybindings.json"),
+        ConfigFile("/Users/{user}/.tmux.conf"),
+        ConfigFile("/Library/Keyboard Layouts/Deutsch - Programming.icns", os=OS.OSX),
+        ConfigFile("/Library/Keyboard Layouts/Deutsch - Programming.keylayout", os=OS.OSX),    ]
 
 def get(user="kul"):
     """
@@ -20,6 +21,8 @@ def get(user="kul"):
     """
     if platform == "darwin":
         for config_file in config_files:
+            if not config_file.os & OS.OSX:
+                continue
             full_path = config_file.osx_path.format(user=user)
             logging.info("Getting %s", full_path)
 
@@ -31,7 +34,9 @@ def get(user="kul"):
             os.makedirs(os.path.dirname(destination_path), exist_ok=True)
             shutil.copy(full_path, destination_path)
     elif platform == "win32":
-        # Handle windows
+        for config_file in config_files:
+            if not config_file.os & OS.WIN:
+                continue
         pass
                 
 
@@ -41,6 +46,8 @@ def set(user="kul"):
     """
     if platform == "darwin":
         for config_file in config_files:
+            if not config_file.os & OS.OSX:
+                continue
             logging.info("Setting %s", config_file.osx_path)
             source_path = f"./configfiles/{config_file.osx_path}"
 
