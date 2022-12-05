@@ -8,16 +8,15 @@
   {
     "key": "ctrl+e",
     "command": "workbench.action.toggleSidebarVisibility"
-  }kj,
+  },
   {
     "key": "ctrl+h",
-    "when": "editorTextFocus",
     "command": "workbench.files.action.focusFilesExplorer"
   },
   {
     "key": "ctrl+l",
     "when": "sideBarFocus",
-    "command": "workbench.action.focusActiveEditorGroup"
+    "command": "workbench.action.toggleSidebarVisibility"
   },
   // {
   //   "key": "ctrl+h",
