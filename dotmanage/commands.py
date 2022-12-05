@@ -10,6 +10,8 @@ from dotmanage.models.ConfigFile import ConfigFile
 config_files: List[ConfigFile] = [
         ConfigFile("/Users/{user}/Library/Application Support/Code/User/settings.json", ""),
         ConfigFile("/Users/{user}/Library/Application Support/Code/User/keybindings.json", ""),
+        ConfigFile("/Users/{user}/Library/Application Support/Code/User/keybindings.json", ""),
+        ConfigFile("/Users/{user}/.tmux.conf", ""),
     ]
 
 def get(user="kul"):
