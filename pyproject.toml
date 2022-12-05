@@ -6,7 +6,7 @@ authors = ["kulgg <75735874+kulgg@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-x = "dotmanage.__main__:main"
+x = "dotmanage.main:main"
 
 [tool.poetry.dependencies]
 python = "^3.11"
