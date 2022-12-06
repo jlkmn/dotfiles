@@ -8,7 +8,7 @@ class OS(Flag):
 
 @dataclass
 class ConfigFile:
-    osx_path: str
+    osx_path: str = ""
     win_path: str = ""
     linux_path: str = ""
     os: OS = OS.WIN | OS.LINUX | OS.OSX
