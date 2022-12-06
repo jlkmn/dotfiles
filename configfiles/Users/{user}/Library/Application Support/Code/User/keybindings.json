@@ -103,5 +103,18 @@
     "key": "alt+cmd+g b",
     "command": "-gitlens.toggleFileBlame",
     "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+  },
+  {
+    "key": "l",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["list.select", "workbench.action.toggleSidebarVisibility"]
+    },
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "l",
+    "command": "-list.select",
+    "when": "listFocus && !inputFocus"
   }
 ]

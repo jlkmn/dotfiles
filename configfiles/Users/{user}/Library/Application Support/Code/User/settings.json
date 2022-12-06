@@ -1,16 +1,5 @@
 {
   "editor.fontFamily": "'FuraMono Nerd Font', 'monospace', monospace",
-  "vim.useCtrlKeys": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.hlsearch": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "[javascript]": {
@@ -37,5 +26,6 @@
     "*.cts": "${capture}.typegen.ts"
   },
   "git.enableSmartCommit": true,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "multiCommand.commands": []
 }
