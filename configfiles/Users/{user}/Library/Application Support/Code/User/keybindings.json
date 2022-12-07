@@ -105,7 +105,7 @@
     "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
   },
   {
-    "key": "l",
+    "key": "enter",
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": ["list.select", "workbench.action.toggleSidebarVisibility"]
@@ -113,8 +113,35 @@
     "when": "listFocus && !inputFocus"
   },
   {
-    "key": "l",
+    "key": "enter",
     "command": "-list.select",
     "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+j",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.togglePanel"
+      ]
+    },
+    "when": "sideBarVisible"
+  },
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+j",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["workbench.action.toggleMaximizedPanel"]
+    },
+    "when": "!panelMaximized"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
   }
 ]
