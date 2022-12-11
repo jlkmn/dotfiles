@@ -119,17 +119,6 @@
   },
   {
     "key": "cmd+j",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "sequence": [
-        "workbench.action.toggleSidebarVisibility",
-        "workbench.action.togglePanel"
-      ]
-    },
-    "when": "sideBarVisible"
-  },
-  {
-    "key": "cmd+j",
     "command": "workbench.action.togglePanel"
   },
   {
@@ -138,7 +127,18 @@
     "args": {
       "sequence": ["workbench.action.toggleMaximizedPanel"]
     },
-    "when": "!panelMaximized"
+    "when": "!panelMaximized && !panelVisible && !sideBarVisible"
+  },
+  {
+    "key": "cmd+j",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.toggleMaximizedPanel"
+      ]
+    },
+    "when": "!panelMaximized && !panelVisible && sideBarVisible"
   },
   {
     "key": "cmd+j",
