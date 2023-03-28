@@ -6,6 +6,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
+  "[liquid]": {
+    "editor.formatOnSave": false
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.lineNumbers": "relative",
@@ -13,7 +16,6 @@
     "asvetliakov.vscode-neovim": 1
   },
   "audioCues.volume": 0,
-  "window.zoomLevel": 1,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js, ${capture}.typegen.ts",
@@ -27,5 +29,14 @@
   },
   "git.enableSmartCommit": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "multiCommand.commands": []
+  "multiCommand.commands": [],
+  "vim.useSystemClipboard": true,
+  "vim.foldfix": true,
+  "tailwindCSS.emmetCompletions": true,
+  "keyboard.dispatch": "keyCode",
+  "liquid.format.endNewLine": true,
+  "window.zoomLevel": 1,
+  "[python]": {
+    "editor.formatOnType": true
+  }
 }

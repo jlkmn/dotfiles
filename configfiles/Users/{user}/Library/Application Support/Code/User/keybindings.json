@@ -5,10 +5,8 @@
     "when": "neovim.mode == insert && editorTextFocus",
     "args": "j"
   },
-  {
-    "key": "ctrl+e",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
+
+  // Vim like navigation to jump between file explorer and eidtor
   {
     "key": "ctrl+h",
     "command": "workbench.files.action.focusFilesExplorer"
@@ -18,16 +16,8 @@
     "when": "sideBarFocus",
     "command": "workbench.action.toggleSidebarVisibility"
   },
-  // {
-  //   "key": "ctrl+h",
-  //   "command": "workbench.scm.focus",
-  //   "when": "filesExplorerFocus"
-  // },
-  // {
-  //   "key": "ctrl+l",
-  //   "command": "workbench.files.action.focusFilesExplorer",
-  //   "when": "!filesExplorerFocus && !editorTextFocus"
-  // },
+
+  // Vim like navigation for suggestions and quick open
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
@@ -48,16 +38,8 @@
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
   },
-  {
-    "key": "shift+tab",
-    "command": "workbench.action.quickOpenNavigatePrevious",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "tab",
-    "command": "workbench.action.quickOpenNavigateNext",
-    "when": "inQuickOpen"
-  },
+
+  // Tab navigation like in the browser
   {
     "key": "cmd+1",
     "command": "workbench.action.openEditorAtIndex1"
@@ -94,29 +76,8 @@
     "key": "cmd+9",
     "command": "workbench.action.openEditorAtIndex9"
   },
-  {
-    "key": "alt+b",
-    "command": "gitlens.toggleFileBlame",
-    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
-  },
-  {
-    "key": "alt+cmd+g b",
-    "command": "-gitlens.toggleFileBlame",
-    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
-  },
-  {
-    "key": "enter",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "sequence": ["list.select", "workbench.action.toggleSidebarVisibility"]
-    },
-    "when": "listFocus && !inputFocus"
-  },
-  {
-    "key": "enter",
-    "command": "-list.select",
-    "when": "listFocus && !inputFocus"
-  },
+
+  // Cmd + j to toggle maximized terminal window
   {
     "key": "cmd+j",
     "command": "workbench.action.togglePanel"
@@ -143,5 +104,50 @@
   {
     "key": "cmd+j",
     "command": "-workbench.action.togglePanel"
+  },
+
+  // Easier file explorer actions
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": ["list.select", "workbench.action.toggleSidebarVisibility"]
+    },
+    "when": "listFocus && !inputFocus"
+  },
+  // Easier Emmet workflows
+  {
+    "key": "cmd+shift+a",
+    "command": "editor.emmet.action.wrapWithAbbreviation"
+  },
+  {
+    "key": "shift+cmd+[",
+    "when": "editorTextFocus",
+    "command": "editor.emmet.action.matchTag"
+  },
+  {
+    "key": "cmd+shift+2",
+    "when": "editorTextFocus",
+    "command": "editor.emmet.action.updateTag"
   }
 ]
