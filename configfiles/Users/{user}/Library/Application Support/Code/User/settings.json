@@ -12,9 +12,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.lineNumbers": "relative",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
   "audioCues.volume": 0,
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
@@ -34,9 +31,12 @@
   "vim.foldfix": true,
   "tailwindCSS.emmetCompletions": true,
   "keyboard.dispatch": "keyCode",
-  "liquid.format.endNewLine": true,
-  "window.zoomLevel": 1,
+  "liquid.format.rules": {
+    "endNewline": true
+  },
   "[python]": {
-    "editor.formatOnType": true
-  }
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "window.zoomLevel": 1
 }
