@@ -12,6 +12,7 @@ from dotmanage.fs import copy_files
 config_files: List[ConfigFile] = [
     ConfigFile("/Users/{user}/Library/Application Support/Code/User/settings.json"),
     ConfigFile("/Users/{user}/Library/Application Support/Code/User/keybindings.json"),
+    ConfigFile("/Users/{user}/Library/Fonts/Fura Mono Medium Nerd Font Complete.otf"),
     ConfigFile("/Users/{user}/.tmux.conf"),
     ConfigFile("/Library/Keyboard Layouts/Deutsch - Programming.icns", os=OS.OSX),
     ConfigFile("/Library/Keyboard Layouts/Deutsch - Programming.keylayout", os=OS.OSX),
