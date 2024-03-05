@@ -28,7 +28,10 @@ def get(user="kul"):
         for config_file in config_files:
             if not config_file.os & OS.OSX:
                 continue
+            
             full_path = config_file.osx_path.format(user=user)
+            if not os.path.isfile(full_path):
+                continue
             destination_path = f"./configfiles/{config_file.osx_path}"
             copy_files(Path(full_path), Path(destination_path))
     elif platform == "win32":

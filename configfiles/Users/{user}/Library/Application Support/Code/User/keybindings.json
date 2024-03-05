@@ -1,15 +1,21 @@
 [
-  {
-    "command": "vscode-neovim.compositeEscape1",
-    "key": "j",
-    "when": "neovim.mode == insert && editorTextFocus",
-    "args": "j"
-  },
-
   // Vim like navigation to jump between file explorer and eidtor
   {
     "key": "ctrl+h",
+    "when": "!isInDiffEditor",
     "command": "workbench.files.action.focusFilesExplorer"
+  },
+  {
+    "key": "ctrl+l",
+    "when": "sideBarFocus",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+
+  // Vim like navigation to jump between sounrce control and diffEditor
+  {
+    "key": "ctrl+h",
+    "when": "isInDiffEditor",
+    "command": "workbench.view.scm"
   },
   {
     "key": "ctrl+l",
@@ -149,5 +155,70 @@
     "key": "cmd+shift+2",
     "when": "editorTextFocus",
     "command": "editor.emmet.action.updateTag"
+  },
+  {
+    "key": "alt+]",
+    "command": "github.copilot.nextPanelSolution",
+    "when": "github.copilot.activated && github.copilot.panelVisible"
+  },
+  {
+    "key": "alt+]",
+    "command": "-github.copilot.nextPanelSolution",
+    "when": "github.copilot.activated && github.copilot.panelVisible"
+  },
+  {
+    "key": "cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "git.stageSelectedRanges",
+        "workbench.action.closeActiveEditor",
+        "workbench.view.scm"
+      ]
+    },
+    "when": "isInDiffEditor && !operationInProgress"
+  },
+  {
+    "key": "cmd+k alt+cmd+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "isInDiffEditor && !operationInProgress"
+  },
+  {
+    "key": "cmd+k cmd+a",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "git.stage",
+        "workbench.action.closeActiveEditor",
+        "workbench.view.scm"
+      ]
+    },
+    "when": "isInDiffEditor && !operationInProgress"
+  },
+  {
+    "key": "cmd+k cmd+u",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "git.unstage",
+        "workbench.action.closeActiveEditor",
+        "workbench.view.scm"
+      ]
+    },
+    "when": "isInDiffEditor && !operationInProgress"
+  },
+  {
+    "key": "shift+cmd+c",
+    "command": "git.commitStaged"
   }
 ]

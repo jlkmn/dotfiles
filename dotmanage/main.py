@@ -12,7 +12,10 @@ def main():
     configure_logging()
 
     try:
-        fire.Fire(commands)
+        fire.Fire({
+      'get': commands.get,
+      'set': commands.set,
+  })
     except Exception as exception:
         logging.exception(exception)
         sys.exit(ExitStatus.failure)
