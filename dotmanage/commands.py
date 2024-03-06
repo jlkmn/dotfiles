@@ -16,6 +16,7 @@ config_files: List[ConfigFile] = [
     ConfigFile("/Users/{user}/.tmux.conf"),
     ConfigFile("/Library/Keyboard Layouts/Deutsch - Programming.icns", os=OS.OSX),
     ConfigFile("/Library/Keyboard Layouts/Deutsch - Programming.keylayout", os=OS.OSX),
+    ConfigFile("/Users/{user}/Library/Application Support/JetBrains/IntelliJIdea2023.3/keymaps/VSCodeCustom.xml")
 ]
 
 
