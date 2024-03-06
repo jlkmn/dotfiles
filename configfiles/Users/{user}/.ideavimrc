@@ -1,0 +1,7 @@
+set clipboard+=unnamed
+set visualbell
+set noerrorbells
+
+set NERDTree
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapCloseDir='h'
